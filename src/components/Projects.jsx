@@ -80,7 +80,7 @@ export default function Projects() {
                     {/* Tech Stack Text */}
                     <div className="flex flex-wrap gap-3 items-center mb-8">
                       {project.tech.map((t) => (
-                        <span key={t} className="text-[10px] font-mono text-navy bg-navy/5 px-3 py-1 rounded uppercase tracking-wider">
+                        <span key={t} className="text-[9px] md:text-[10px] font-mono text-navy bg-transparent border border-navy/20 px-3 py-1.5 rounded-full uppercase tracking-wider">
                           {t}
                         </span>
                       ))}

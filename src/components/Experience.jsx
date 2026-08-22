@@ -112,7 +112,7 @@ export default function Experience() {
                 </ul>
                 <div className="flex flex-wrap gap-3">
                   {exp.tech.map(t => (
-                    <span key={t} className="text-[11px] uppercase tracking-wider font-mono text-navy bg-navy/5 px-3 py-1.5 rounded">
+                    <span key={t} className="text-[9px] md:text-[10px] font-mono text-navy bg-transparent border border-navy/20 px-3 py-1.5 rounded-full uppercase tracking-wider">
                       {t}
                     </span>
                   ))}

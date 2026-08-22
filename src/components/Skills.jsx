@@ -136,7 +136,10 @@ export default function Skills() {
                 </div>
                 <div className="md:col-span-3 flex flex-wrap gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-4">
                   {category.items.map(tech => (
-                    <span key={tech} className="text-[11px] font-mono text-navy bg-surface px-3 py-1.5 rounded uppercase tracking-wide hover:bg-maroon hover:text-bg transition-colors cursor-default">
+                    <span 
+                      key={tech} 
+                      className="text-[10px] md:text-[11px] font-mono text-navy bg-transparent border border-navy/20 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-maroon hover:text-bg hover:border-maroon transition-all duration-300 cursor-default hover:-translate-y-0.5"
+                    >
                       {tech}
                     </span>
                   ))}
