@@ -107,7 +107,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-xl font-serif mb-1">ANJUM AZRA</h3>
-            <span className="text-[10px] tracking-[0.2em] uppercase font-sans text-bg/50">
+            <span className="text-[10px] tracking-[0.2em] uppercase font-sans text-bg/80">
               AI & Data Science Developer
             </span>
           </div>
@@ -117,14 +117,14 @@ export default function Footer() {
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-[10px] uppercase tracking-widest font-sans text-bg/70 hover:text-bg transition-colors"
+                className="text-[10px] uppercase tracking-widest font-sans text-bg/90 hover:text-bg transition-colors"
               >
                 {item}
               </a>
             ))}
           </div>
 
-          <p className="text-[10px] font-sans text-bg/30 uppercase tracking-widest text-center">
+          <p className="text-[10px] font-sans text-bg/70 uppercase tracking-widest text-center">
             &copy; {new Date().getFullYear()} Pathan Anjum Azra. All rights reserved.
           </p>
         </div>

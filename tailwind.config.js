@@ -7,24 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: {
-          DEFAULT: "#F4F1EA", // Primary Background
-        },
-        surface: {
-          DEFAULT: "#EBE6DA", // Secondary Background / Cards
-        },
+        ivory: "#f2efe6",
+        bluegray: "#cfd6ea",
         navy: {
-          DEFAULT: "#1A1A2E", // Primary Text
+          DEFAULT: "#1a2647",
+          primary: "#1a2647",
+          base: "#0b1330",
+          mid: "#2c3a68",
+          muted: "#5c6a96"
         },
-        maroon: {
-          DEFAULT: "#8B2942", // Accent
+        gold: {
+          DEFAULT: "#c6a15b",
+          bright: "#d9b876"
         },
-        muted: {
-          DEFAULT: "#5A5A6E", // Secondary Text
-        },
-        subtle: {
-          DEFAULT: "#D8D2C4", // Borders
-        }
+        // Legacy colors kept temporarily until all sections are updated
+        bg: { DEFAULT: "#F4F1EA" },
+        surface: { DEFAULT: "#EBE6DA" },
+        maroon: { DEFAULT: "#8B2942" },
+        muted: { DEFAULT: "#5A5A6E" },
+        subtle: { DEFAULT: "#D8D2C4" }
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

@@ -29,6 +29,7 @@ export default function Navigation({ onOpenCertifications }) {
   return (
     <>
       <motion.nav
+        aria-label="Main Navigation"
         variants={{
           visible: { y: 0 },
           hidden: { y: "-100%" },
@@ -37,14 +38,14 @@ export default function Navigation({ onOpenCertifications }) {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-300",
-          scrolled ? "bg-bg/90 backdrop-blur-md" : "bg-transparent"
+          scrolled ? "bg-navy-base shadow-md" : "bg-navy-base"
         )}
       >
         <div className={cn(
           "flex items-center justify-between px-6 md:px-12 transition-all duration-300",
           scrolled ? "py-4" : "py-6 md:py-8"
         )}>
-          <a href="#" className="text-xl md:text-2xl font-serif font-bold tracking-wide text-navy flex items-center gap-2 relative z-50">
+          <a href="#" className="text-xl md:text-2xl font-serif font-bold tracking-wide text-ivory flex items-center gap-2 relative z-50">
             ANJUM AZRA
           </a>
 
@@ -54,20 +55,20 @@ export default function Navigation({ onOpenCertifications }) {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-muted hover:text-maroon transition-colors relative group py-2"
+                  className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-ivory/70 hover:text-gold transition-colors relative group py-2"
                 >
                   {link.name}
-                  <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-maroon transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
             ))}
             <li>
               <button
                 onClick={onOpenCertifications}
-                className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-muted hover:text-maroon transition-colors relative group py-2"
+                className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-ivory/70 hover:text-gold transition-colors relative group py-2"
               >
                 Certifications
-                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-maroon transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
               </button>
             </li>
           </ul>
@@ -76,25 +77,27 @@ export default function Navigation({ onOpenCertifications }) {
           <button 
             className="md:hidden flex flex-col justify-center items-end w-8 h-8 z-[60] relative"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
-            <span className={cn("bg-navy h-[1px] transition-all duration-300 ease-out", mobileMenuOpen ? "w-6 rotate-45 translate-y-[2px]" : "w-6 mb-1.5")} />
-            <span className={cn("bg-navy h-[1px] transition-all duration-300 ease-out", mobileMenuOpen ? "w-6 -rotate-45" : "w-4")} />
+            <span className={cn("bg-ivory h-[1px] transition-all duration-300 ease-out", mobileMenuOpen ? "w-6 rotate-45 translate-y-[2px]" : "w-6 mb-1.5")} />
+            <span className={cn("bg-ivory h-[1px] transition-all duration-300 ease-out", mobileMenuOpen ? "w-6 -rotate-45" : "w-4")} />
           </button>
         </div>
         
         {/* Thin divider line */}
-        <div className={cn("w-full h-[1px] bg-subtle/50 transition-opacity duration-300", scrolled ? "opacity-100" : "opacity-0 md:opacity-100")} />
+        <div className={cn("w-full h-[1px] bg-navy-mid/40 transition-opacity duration-300", scrolled ? "opacity-100" : "opacity-0 md:opacity-100")} />
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <motion.nav
+            aria-label="Mobile Navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[55] bg-bg pt-24 px-6 md:hidden flex flex-col h-screen"
+            className="fixed inset-0 z-[55] bg-navy-base pt-24 px-6 md:hidden flex flex-col h-screen"
           >
             <ul className="flex flex-col gap-6 mt-12">
               {navLinks.map((link, i) => (
@@ -107,7 +110,7 @@ export default function Navigation({ onOpenCertifications }) {
                   <a
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-3xl font-serif text-navy transition-colors block"
+                    className="text-3xl font-serif text-ivory hover:text-gold transition-colors block"
                   >
                     {link.name}
                   </a>
@@ -123,13 +126,13 @@ export default function Navigation({ onOpenCertifications }) {
                     setMobileMenuOpen(false);
                     onOpenCertifications();
                   }}
-                  className="text-3xl font-serif text-navy transition-colors block text-left"
+                  className="text-3xl font-serif text-ivory hover:text-gold transition-colors block text-left w-full"
                 >
                   Certifications
                 </button>
               </motion.li>
             </ul>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </>
