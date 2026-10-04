@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { experiences } from "../data";
+import { experiences, education, journey } from "../data";
 
 export default function Experience() {
   return (
@@ -52,14 +52,63 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: idx * 0.1 }}
-              className="flex flex-col border-t border-navy/10 pt-6 group hover:border-maroon/50 transition-colors"
+              className="flex flex-col border-t border-navy/10 pt-6 group hover:border-gold/50 hover:shadow-glow-gold transition-colors"
             >
-              <h3 className="text-2xl font-serif text-navy mb-4 group-hover:text-maroon transition-colors">
+              <h3 className="text-2xl font-serif text-navy mb-4 group-hover:text-sceptre transition-colors">
                 {item.title}
               </h3>
               <p className="text-sm font-sans text-muted leading-relaxed">
                 {item.desc}
               </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* EDUCATION */}
+      <div className="max-w-7xl mx-auto mb-32 md:mb-40">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 md:mb-24 pb-8 border-b border-navy/20"
+        >
+          <h2 className="text-5xl md:text-8xl font-serif font-normal text-navy tracking-tight">
+            EDUCATION
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 gap-16 md:gap-24">
+          {education.map((edu, idx) => (
+            <motion.div 
+              key={`${edu.institute}-${idx}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-transparent hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
+            >
+              <div className="md:col-span-4 flex flex-col">
+                <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-sceptre transition-colors">
+                  {edu.duration}
+                </span>
+                <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-sceptre transition-colors">
+                  {edu.institute}
+                </h3>
+              </div>
+              
+              <div className="md:col-span-8 flex flex-col justify-center">
+                <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-gold/30 transition-colors" />
+                <h4 className="text-2xl font-serif text-navy mb-4 group-hover:text-sceptre transition-colors">
+                  {edu.degree}
+                </h4>
+                {edu.detail && (
+                  <p className="text-sm font-sans text-muted leading-relaxed">
+                    &mdash; {edu.detail}
+                  </p>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -87,13 +136,13 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-transparent hover:border-maroon/20 hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-transparent hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
             >
               <div className="md:col-span-4 flex flex-col">
-                <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-maroon transition-colors">
+                <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-sceptre transition-colors">
                   {exp.period}
                 </span>
-                <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-maroon transition-colors">
+                <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-sceptre transition-colors">
                   {exp.company}
                 </h3>
                 <span className="text-sm font-sans italic text-navy mb-6 md:mb-0">
@@ -102,7 +151,7 @@ export default function Experience() {
               </div>
               
               <div className="md:col-span-8 flex flex-col">
-                <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-maroon/20 transition-colors" />
+                <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-gold/30 transition-colors" />
                 <ul className="flex flex-col gap-4 mb-8">
                   {exp.bullets.map((bullet, i) => (
                     <li key={i} className="text-sm font-sans text-muted leading-relaxed">
@@ -123,13 +172,53 @@ export default function Experience() {
         </div>
       </div>
 
+      {/* JOURNEY / TIMELINE */}
+      <div className="max-w-7xl mx-auto mb-32 md:mb-40">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 md:mb-24 pb-8 border-b border-navy/20"
+        >
+          <h2 className="text-5xl md:text-8xl font-serif font-normal text-navy tracking-tight">
+            JOURNEY
+          </h2>
+        </motion.div>
+
+        <div className="flex flex-col gap-8 border-l border-navy/20 pl-6 md:pl-10 ml-2 md:ml-4">
+          {journey.map((step, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="relative group"
+            >
+              {/* Timeline Dot */}
+              <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 rounded-full bg-navy/20 group-hover:bg-sceptre group-hover:shadow-glow-sceptre transition-colors shadow-[0_0_0_4px_var(--tw-colors-bg)]" />
+              
+              <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6">
+                <span className="text-xs tracking-widest font-mono text-navy/60 w-48 shrink-0 group-hover:text-sceptre transition-colors">
+                  {step.when}
+                </span>
+                <p className="text-sm font-sans text-muted leading-relaxed group-hover:text-navy transition-colors">
+                  {step.what}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       {/* WHAT'S NEXT */}
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="p-12 md:p-24 bg-navy text-bg text-center"
+          className="p-12 md:p-24 bg-navy text-bg text-center border border-gold/30 shadow-glow-gold rounded-2xl relative overflow-hidden"
         >
           <span className="text-xs tracking-[0.2em] uppercase font-sans text-bg/50 block mb-8">
             Currently Exploring

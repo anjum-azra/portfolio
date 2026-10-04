@@ -41,7 +41,7 @@ export default function Projects() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: idx * 0.15 }}
                 className={cn(
-                  "flex flex-col lg:flex-row items-center gap-10 md:gap-16 group p-6 border border-transparent hover:border-maroon/20 hover:bg-surface/50 hover:-translate-y-2 transition-all duration-500 rounded-lg",
+                  "flex flex-col lg:flex-row items-center gap-10 md:gap-16 group p-6 border border-transparent hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface/50 hover:-translate-y-2 transition-all duration-500 rounded-lg",
                   isReversed ? "lg:flex-row-reverse" : ""
                 )}
               >
@@ -68,7 +68,7 @@ export default function Projects() {
                     </span>
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-serif text-navy leading-tight mb-4 group-hover:text-maroon transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl font-serif text-navy leading-tight mb-4 group-hover:text-sceptre transition-colors duration-300">
                     {project.name}
                   </h3>
 
@@ -89,12 +89,12 @@ export default function Projects() {
                     {/* Links */}
                     <div className="flex items-center gap-8 pt-4 border-t border-subtle">
                       {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noreferrer" className="text-xs font-semibold uppercase tracking-widest text-navy hover:text-maroon transition-colors flex items-center gap-2">
+                        <a href={project.demo} target="_blank" rel="noreferrer" className="text-xs font-semibold uppercase tracking-widest text-navy hover:text-sceptre transition-colors flex items-center gap-2">
                           View Project &rarr;
                         </a>
                       )}
                       {project.repo && (
-                        <a href={project.repo} target="_blank" rel="noreferrer" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-maroon transition-colors">
+                        <a href={project.repo} target="_blank" rel="noreferrer" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-sceptre transition-colors">
                           GitHub
                         </a>
                       )}

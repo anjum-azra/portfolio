@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PROFILE_SRC, personalProfile } from "../data";
+import LuxuryParticles from "./LuxuryParticles";
 
 export default function Hero() {
   const container = {
@@ -21,6 +22,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center overflow-hidden bg-gradient-to-br from-navy-mid to-navy-base">
+      <LuxuryParticles />
       
       <motion.div
         variants={container}
@@ -29,47 +31,68 @@ export default function Hero() {
         className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start"
       >
         {/* Main Content */}
-        <div className="flex flex-col pt-12 lg:pt-0 z-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between pt-12 lg:pt-0 z-20 w-full gap-12">
           
-          <motion.div variants={item}>
-            <span className="text-[10vw] lg:text-[110px] leading-[0.85] font-serif font-bold text-ivory tracking-tight block mb-2">
-              Hey, I'm Anjum Azra,
-            </span>
-          </motion.div>
-          <motion.h1
-            variants={item}
-            className="text-[10vw] lg:text-[110px] leading-[0.85] font-serif font-bold text-ivory tracking-tight mb-8"
-          >
-            AI & DATA SCIENCE<br/>DEVELOPER
-          </motion.h1>
+          <div className="flex flex-col flex-1 max-w-4xl">
+            <motion.div variants={item}>
+              <span className="text-5xl lg:text-[80px] leading-[1.1] font-serif font-bold text-ivory tracking-tight block mb-2 shimmer-text">
+                Hey, I'm Anjum Azra,
+              </span>
+            </motion.div>
+            <motion.h1
+              variants={item}
+              className="text-5xl lg:text-[80px] leading-[1.1] font-serif font-bold tracking-tight mb-8 shimmer-text"
+            >
+              AI & DATA SCIENCE<br/>DEVELOPER
+            </motion.h1>
 
-          <motion.div variants={item} className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-serif text-ivory leading-tight mb-6">
-              I build <i className="italic text-gold-bright">intelligent</i> digital experiences that turn data into <i className="italic text-gold-bright">meaningful</i> solutions.
-            </h2>
-            
-            <p className="text-base font-sans text-bluegray leading-relaxed mb-10 max-w-md">
-              I am an IT student and developer working across Artificial Intelligence, Data Science, Generative AI, Full-Stack Development, and Data Analytics.
-            </p>
+            <motion.div variants={item} className="max-w-2xl">
+              <h2 className="text-2xl md:text-4xl font-serif text-ivory leading-tight mb-6">
+                I build <i className="italic text-gold-bright">intelligent</i> digital experiences that turn data into <i className="italic text-gold-bright">meaningful</i> solutions.
+              </h2>
+              
+              <p className="text-base font-sans text-bluegray leading-relaxed mb-10 max-w-md">
+                I am an IT student and developer working across Artificial Intelligence, Data Science, Generative AI, Full-Stack Development, and Data Analytics.
+              </p>
 
-            <div className="flex flex-wrap items-center gap-8 md:gap-12 mt-4">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-semibold text-ivory hover:text-gold transition-colors group"
-              >
-                <span>Explore Work</span>
-                <span className="w-8 h-[1px] bg-ivory group-hover:bg-gold group-hover:w-16 transition-all duration-300" />
-              </a>
+              <div className="flex flex-wrap items-center gap-8 md:gap-12 mt-4">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+                  <a
+                    href="#projects"
+                    className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-semibold text-ivory hover:text-gold hover:drop-shadow-glow-gold transition-all group"
+                  >
+                    <span>Explore Work</span>
+                    <span className="w-8 h-[1px] bg-ivory group-hover:bg-gold group-hover:w-16 transition-all duration-300" />
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-semibold text-ivory hover:text-gold hover:drop-shadow-glow-gold transition-all group"
+                  >
+                    <span>View Resume</span>
+                    <span className="w-8 h-[1px] bg-ivory group-hover:bg-gold group-hover:w-16 transition-all duration-300" />
+                  </a>
+                </div>
 
-              <div className="flex items-center gap-6">
-                <a href={personalProfile.github} target="_blank" rel="noreferrer" className="text-[10px] tracking-widest uppercase font-sans text-ivory hover:text-gold transition-colors border-b border-ivory/30 hover:border-gold pb-0.5">
-                  GitHub
-                </a>
-                <a href={personalProfile.linkedin} target="_blank" rel="noreferrer" className="text-[10px] tracking-widest uppercase font-sans text-ivory hover:text-gold transition-colors border-b border-ivory/30 hover:border-gold pb-0.5">
-                  LinkedIn
-                </a>
+                <div className="flex items-center gap-6">
+                  <a href={personalProfile.github} target="_blank" rel="noreferrer" className="text-[10px] tracking-widest uppercase font-sans text-ivory hover:text-gold hover:drop-shadow-glow-gold transition-all border-b border-ivory/30 hover:border-gold pb-0.5">
+                    GitHub
+                  </a>
+                  <a href={personalProfile.linkedin} target="_blank" rel="noreferrer" className="text-[10px] tracking-widest uppercase font-sans text-ivory hover:text-gold hover:drop-shadow-glow-gold transition-all border-b border-ivory/30 hover:border-gold pb-0.5">
+                    LinkedIn
+                  </a>
+                </div>
               </div>
-            </div>
+            </motion.div>
+          </div>
+
+          <motion.div variants={item} className="w-full lg:w-auto flex justify-center lg:justify-end mt-12 lg:mt-0">
+            <img 
+              src={PROFILE_SRC} 
+              alt="Anjum Azra" 
+              className="w-56 h-56 md:w-72 md:h-72 lg:w-[450px] lg:h-[450px] rounded-full object-cover border-4 border-gold shadow-glow-gold"
+            />
           </motion.div>
         </div>
       </motion.div>

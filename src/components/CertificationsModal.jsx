@@ -28,6 +28,7 @@ export default function CertificationsModal({ isOpen, onClose }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             className="fixed inset-0 z-[9990] bg-bg/95 backdrop-blur-md overflow-y-auto"
+            data-lenis-prevent="true"
           >
             {/* Close button */}
             <button 
@@ -56,17 +57,17 @@ export default function CertificationsModal({ isOpen, onClose }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + (idx % 3) * 0.1 }}
                     onClick={() => cert.image ? setSelectedCert(cert) : null}
-                    className={`p-8 border border-navy/20 bg-surface flex flex-col h-full transition-colors duration-500 ${cert.image ? 'cursor-pointer group hover:bg-navy' : 'opacity-80'}`}
+                    className={`p-8 border border-navy/20 bg-surface flex flex-col h-full transition-colors duration-500 ${cert.image ? 'cursor-pointer group hover:bg-java hover:border-gold hover:shadow-glow-gold' : 'opacity-80'}`}
                   >
-                    <h3 className={`text-lg font-serif transition-colors duration-500 mb-8 flex-grow ${cert.image ? 'text-navy group-hover:text-bg' : 'text-navy'}`}>
+                    <h3 className={`text-lg font-serif transition-colors duration-500 mb-8 flex-grow ${cert.image ? 'text-navy group-hover:text-ivory' : 'text-navy'}`}>
                       {cert.title}
                     </h3>
-                    <div className={`flex items-center justify-between mt-auto pt-4 border-t transition-colors duration-500 ${cert.image ? 'border-navy/20 group-hover:border-bg/20' : 'border-navy/20'}`}>
-                      <span className={`text-[10px] font-sans uppercase tracking-widest ${cert.image ? 'text-muted group-hover:text-bg/70' : 'text-muted'}`}>
+                    <div className={`flex items-center justify-between mt-auto pt-4 border-t transition-colors duration-500 ${cert.image ? 'border-navy/20 group-hover:border-gold/30' : 'border-navy/20'}`}>
+                      <span className={`text-[10px] font-sans uppercase tracking-widest ${cert.image ? 'text-muted group-hover:text-gold/70' : 'text-muted'}`}>
                         {cert.issuer}
                       </span>
                       {cert.image && (
-                        <span className="text-[10px] font-sans text-navy group-hover:text-bg uppercase tracking-widest flex items-center gap-1">
+                        <span className="text-[10px] font-sans text-navy group-hover:text-ivory uppercase tracking-widest flex items-center gap-1">
                           View &rarr;
                         </span>
                       )}

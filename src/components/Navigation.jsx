@@ -71,6 +71,17 @@ export default function Navigation({ onOpenCertifications }) {
                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
               </button>
             </li>
+            <li>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-ivory/70 hover:text-gold transition-colors relative group py-2"
+              >
+                Resume
+                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
+              </a>
+            </li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -130,6 +141,20 @@ export default function Navigation({ onOpenCertifications }) {
                 >
                   Certifications
                 </button>
+              </motion.li>
+              <motion.li 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navLinks.length + 1) * 0.1 }}
+              >
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-3xl font-serif text-ivory hover:text-gold transition-colors block text-left w-full"
+                >
+                  Resume
+                </a>
               </motion.li>
             </ul>
           </motion.nav>

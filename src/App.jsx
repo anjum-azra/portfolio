@@ -11,6 +11,7 @@ import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import CertificationsModal from "./components/CertificationsModal";
+import { ChatAssistant } from "./data";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -117,6 +118,7 @@ export default function App() {
       </AnimatePresence>
 
       <CertificationsModal isOpen={isCertOpen} onClose={() => setIsCertOpen(false)} />
+      <ChatAssistant />
     </div>
   );
 }

@@ -7,25 +7,43 @@ export default {
   theme: {
     extend: {
       colors: {
-        ivory: "#f2efe6",
-        bluegray: "#cfd6ea",
+        ivory: "#FFFDF8",
+        bluegray: "#B0BBD1",
         navy: {
-          DEFAULT: "#1a2647",
-          primary: "#1a2647",
-          base: "#0b1330",
-          mid: "#2c3a68",
-          muted: "#5c6a96"
+          DEFAULT: "#0B1021", // Deep Royal Navy
+          primary: "#141C33",
+          base: "#060A14",
+          mid: "#1E2A4F",
+          muted: "#4A5568"
         },
         gold: {
-          DEFAULT: "#c6a15b",
-          bright: "#d9b876"
+          DEFAULT: "#D4AF37", // Soft Gold
+          bright: "#F3E5AB"
         },
-        // Legacy colors kept temporarily until all sections are updated
-        bg: { DEFAULT: "#F4F1EA" },
-        surface: { DEFAULT: "#EBE6DA" },
-        maroon: { DEFAULT: "#8B2942" },
-        muted: { DEFAULT: "#5A5A6E" },
-        subtle: { DEFAULT: "#D8D2C4" }
+        sceptre: {
+          DEFAULT: "#8A1538", // Sceptre Red
+        },
+        java: {
+          DEFAULT: "#4A3020", // Java Brown
+        },
+        cerulean: {
+          DEFAULT: "#007BA7", // Cerulean Blue
+        },
+        bg: { DEFAULT: "#FDFBF7" }, // Warm Beige
+        surface: { DEFAULT: "#F0EAD6" }, // Soft Beige
+        maroon: { DEFAULT: "#8A1538" }, // Mapped to Sceptre Red for backwards compatibility
+        muted: { DEFAULT: "#6C665F" },
+        subtle: { DEFAULT: "#E8E2D2" }
+      },
+      boxShadow: {
+        'glow-gold': '0 0 20px rgba(212, 175, 55, 0.4)',
+        'glow-sceptre': '0 0 20px rgba(138, 21, 56, 0.4)',
+        'glow-cerulean': '0 0 20px rgba(0, 123, 167, 0.4)',
+      },
+      dropShadow: {
+        'glow-gold': '0 0 10px rgba(212, 175, 55, 0.6)',
+        'glow-sceptre': '0 0 10px rgba(138, 21, 56, 0.6)',
+        'glow-cerulean': '0 0 10px rgba(0, 123, 167, 0.6)',
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

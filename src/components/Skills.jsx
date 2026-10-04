@@ -92,13 +92,13 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: idx * 0.1 }}
-                className="flex flex-col group p-6 -m-6 border border-transparent hover:border-maroon/20 hover:bg-surface hover:-translate-y-1 transition-all duration-300 rounded-lg"
+                className="flex flex-col group p-6 -m-6 border border-transparent hover:border-gold/30 hover:bg-bg hover:-translate-y-1 hover:shadow-glow-gold transition-all duration-300 rounded-lg"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-sm font-sans font-medium text-muted group-hover:text-maroon transition-colors">{service.num}</span>
-                  <div className="h-[1px] bg-navy/20 flex-grow group-hover:bg-maroon/30 transition-colors" />
+                  <span className="text-sm font-sans font-medium text-muted group-hover:text-sceptre transition-colors">{service.num}</span>
+                  <div className="h-[1px] bg-navy/20 flex-grow group-hover:bg-sceptre/30 transition-colors" />
                 </div>
-                <h3 className="text-xl font-serif text-navy mb-3 group-hover:text-maroon transition-colors">{service.title}</h3>
+                <h3 className="text-xl font-serif text-navy mb-3 group-hover:text-sceptre transition-colors">{service.title}</h3>
                 <p className="text-sm font-sans text-muted leading-relaxed">
                   {service.desc}
                 </p>
@@ -132,13 +132,13 @@ export default function Skills() {
                 className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 border-b border-navy/10 pb-8 last:border-0 group"
               >
                 <div className="md:col-span-1">
-                  <h3 className="text-xs tracking-widest uppercase font-sans text-muted group-hover:text-maroon transition-colors">{category.category}</h3>
+                  <h3 className="text-xs tracking-widest uppercase font-sans text-muted group-hover:text-sceptre transition-colors">{category.category}</h3>
                 </div>
                 <div className="md:col-span-3 flex flex-wrap gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-4">
                   {category.items.map(tech => (
                     <span 
                       key={tech} 
-                      className="text-[10px] md:text-[11px] font-mono text-navy bg-transparent border border-navy/20 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-maroon hover:text-bg hover:border-maroon transition-all duration-300 cursor-default hover:-translate-y-0.5"
+                      className="text-[10px] md:text-[11px] font-mono text-navy bg-transparent border border-navy/20 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-bg hover:border-cerulean hover:shadow-glow-cerulean transition-all duration-300 cursor-default hover:-translate-y-0.5"
                     >
                       {tech}
                     </span>

@@ -14,8 +14,8 @@
 
 body {
   margin: 0;
-  background-color: #F4F1EA;
-  color: #1A1A2E;
+  background-color: #0B1021;
+  color: #FFFDF8;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -33,12 +33,33 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.025;
+  opacity: 0.03;
 }
 
 ::selection {
-  background-color: #8B2942;
-  color: #F4F1EA;
+  background-color: #D4AF37;
+  color: #0B1021;
+}
+
+@keyframes gold-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    to right,
+    #D4AF37 10%,
+    #FFFDF8 40%,
+    #D4AF37 60%,
+    #FFFDF8 80%,
+    #D4AF37 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gold-shimmer 8s linear infinite;
 }
 
 @media (hover: hover) and (pointer: fine) {
