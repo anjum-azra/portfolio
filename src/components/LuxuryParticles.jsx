@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function LuxuryParticles() {
+export default function LuxuryParticles({ 
+  colors = [
+    "bg-gold shadow-glow-gold", 
+    "bg-sceptre shadow-glow-sceptre", 
+    "bg-navy shadow-none", 
+    "bg-cerulean shadow-glow-cerulean"
+  ] 
+}) {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
-    // Generate 30 random particles
-    const newParticles = Array.from({ length: 30 }).map((_, i) => ({
+    // Generate 100 random particles
+    const newParticles = Array.from({ length: 100 }).map((_, i) => ({
       id: i,
       size: Math.random() * 3 + 1, // 1px to 4px
       x: Math.random() * 100, // 0 to 100vw
       y: Math.random() * 100, // 0 to 100vh
       duration: Math.random() * 20 + 10, // 10s to 30s
       delay: Math.random() * 5,
+      colorClass: colors[Math.floor(Math.random() * colors.length)]
     }));
     setParticles(newParticles);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -22,7 +31,7 @@ export default function LuxuryParticles() {
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full bg-gold shadow-glow-gold"
+          className={`absolute rounded-full ${p.colorClass}`}
           style={{
             width: p.size,
             height: p.size,

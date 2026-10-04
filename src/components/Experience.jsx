@@ -2,10 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { experiences, education, journey } from "../data";
 
+import LuxuryParticles from "./LuxuryParticles";
+
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-32 px-6 md:px-12 bg-bg">
+    <section id="experience" className="py-24 md:py-32 px-6 md:px-12 bg-bg relative overflow-hidden">
       
+      <LuxuryParticles colors={["bg-navy shadow-none", "bg-java shadow-none", "bg-sceptre shadow-none"]} />
+      <div className="relative z-10">
       {/* FOCUS & INTERESTS */}
       <div className="max-w-7xl mx-auto mb-32 md:mb-40">
         <motion.div 
@@ -160,8 +164,12 @@ export default function Experience() {
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-3">
-                  {exp.tech.map(t => (
-                    <span key={t} className="text-[9px] md:text-[10px] font-mono text-navy bg-transparent border border-navy/20 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  {exp.tech.map((t, i) => (
+                    <span 
+                      key={t} 
+                      className="text-[9px] md:text-[10px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-3 py-1.5 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float inline-block"
+                      style={{ animationDelay: `${(idx * 0.2) + (i * 0.1)}s` }}
+                    >
                       {t}
                     </span>
                   ))}
@@ -229,6 +237,7 @@ export default function Experience() {
         </motion.div>
       </div>
 
+    </div>
     </section>
   );
 }

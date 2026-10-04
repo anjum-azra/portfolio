@@ -2,10 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { personalProfile } from "../data";
 
+import LuxuryParticles from "./LuxuryParticles";
+
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 md:px-12 bg-surface relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-32 px-6 md:px-12 bg-surface relative overflow-hidden">
+      <LuxuryParticles colors={["bg-navy shadow-none", "bg-java shadow-none", "bg-sceptre shadow-none"]} />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

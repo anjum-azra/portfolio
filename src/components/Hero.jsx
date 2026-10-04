@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center overflow-hidden bg-gradient-to-br from-navy-mid to-navy-base">
-      <LuxuryParticles />
+      <LuxuryParticles colors={["bg-gold shadow-glow-gold"]} />
       
       <motion.div
         variants={container}

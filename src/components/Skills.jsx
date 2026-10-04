@@ -65,10 +65,13 @@ const techStack = [
   }
 ];
 
+import LuxuryParticles from "./LuxuryParticles";
+
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 px-6 md:px-12 bg-surface">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="py-24 md:py-32 px-6 md:px-12 bg-surface relative overflow-hidden">
+      <LuxuryParticles colors={["bg-navy shadow-none", "bg-java shadow-none", "bg-sceptre shadow-none"]} />
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* WHAT I DO */}
         <div className="mb-24 md:mb-32">
@@ -135,10 +138,11 @@ export default function Skills() {
                   <h3 className="text-xs tracking-widest uppercase font-sans text-muted group-hover:text-sceptre transition-colors">{category.category}</h3>
                 </div>
                 <div className="md:col-span-3 flex flex-wrap gap-x-4 gap-y-3 md:gap-x-6 md:gap-y-4">
-                  {category.items.map(tech => (
+                  {category.items.map((tech, i) => (
                     <span 
                       key={tech} 
-                      className="text-[10px] md:text-[11px] font-mono text-navy bg-transparent border border-navy/20 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-bg hover:border-cerulean hover:shadow-glow-cerulean transition-all duration-300 cursor-default hover:-translate-y-0.5"
+                      className="text-[10px] md:text-[11px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float inline-block"
+                      style={{ animationDelay: `${(idx * 0.2) + (i * 0.1)}s` }}
                     >
                       {tech}
                     </span>

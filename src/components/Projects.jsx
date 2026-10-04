@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import { projects } from "../data";
 import { cn } from "../utils/cn";
 
+import LuxuryParticles from "./LuxuryParticles";
+
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 px-6 md:px-12 bg-bg">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-24 md:py-32 px-6 md:px-12 bg-bg relative overflow-hidden">
+      <LuxuryParticles colors={["bg-navy shadow-none", "bg-java shadow-none", "bg-sceptre shadow-none"]} />
+      <div className="max-w-7xl mx-auto relative z-10">
         
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -79,8 +82,12 @@ export default function Projects() {
                   <div className="mt-auto">
                     {/* Tech Stack Text */}
                     <div className="flex flex-wrap gap-3 items-center mb-8">
-                      {project.tech.map((t) => (
-                        <span key={t} className="text-[9px] md:text-[10px] font-mono text-navy bg-transparent border border-navy/20 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                      {project.tech.map((t, i) => (
+                        <span 
+                          key={t} 
+                          className="text-[9px] md:text-[10px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-3 py-1.5 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float inline-block"
+                          style={{ animationDelay: `${(idx * 0.2) + (i * 0.1)}s` }}
+                        >
                           {t}
                         </span>
                       ))}

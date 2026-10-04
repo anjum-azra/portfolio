@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { personalProfile } from "../data";
+import LuxuryParticles from "./LuxuryParticles";
 
 export default function Footer() {
   return (
     <>
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-24 px-6 md:px-12 bg-surface text-navy border-t border-navy/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+      <section id="contact" className="py-24 px-6 md:px-12 bg-surface text-navy border-t border-navy/10 relative overflow-hidden">
+        <LuxuryParticles colors={["bg-navy shadow-none", "bg-navy shadow-none", "bg-sceptre shadow-none"]} />
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative z-10">
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +94,7 @@ export default function Footer() {
               </div>
               <button 
                 type="submit"
-                className="inline-flex items-center justify-center px-8 py-4 bg-java text-ivory text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold hover:text-navy hover:shadow-glow-gold transition-colors w-full mt-4"
+                className="inline-flex items-center justify-center px-8 py-4 bg-navy text-ivory text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold hover:text-navy hover:shadow-glow-gold transition-colors w-full mt-4"
               >
                 Send Message
               </button>
@@ -103,7 +105,7 @@ export default function Footer() {
       </section>
 
       {/* FOOTER MINIMAL */}
-      <footer className="py-8 px-6 md:px-12 bg-java text-ivory border-t border-gold/30">
+      <footer className="py-8 px-6 md:px-12 bg-navy text-ivory border-t border-gold/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-xl font-serif mb-1">ANJUM AZRA</h3>
