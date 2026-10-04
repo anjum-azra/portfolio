@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Lenis from "lenis";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import CustomCursor from "./components/CustomCursor";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
+import AmbientBackground from "./components/AmbientBackground";
+import Marquee from "./components/Marquee";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
@@ -67,7 +69,7 @@ export default function App() {
     if (loading) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: "vertical",
       gestureDirection: "vertical",
@@ -92,7 +94,8 @@ export default function App() {
 
   return (
     <div className="bg-bg text-navy selection:bg-navy selection:text-bg font-sans antialiased">
-      <CustomCursor />
+      <CustomCursor />`n      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-gold z-[999999] origin-left shadow-glow-gold" style={{ scaleX: useSpring(useScroll().scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 }) }} />
+      
       
       <AnimatePresence mode="wait">
         {loading ? (
@@ -105,8 +108,10 @@ export default function App() {
             transition={{ duration: 0.5 }}
           >
             <Navigation onOpenCertifications={() => setIsCertOpen(true)} />
-            <main>
+            <AmbientBackground />
+            <main className="relative z-10">
               <Hero />
+              <Marquee />
               <About />
               <Projects />
               <Skills />

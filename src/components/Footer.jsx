@@ -2,13 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { personalProfile } from "../data";
 import LuxuryParticles from "./LuxuryParticles";
+import StarParticles from "./StarParticles";
 
 export default function Footer() {
   return (
     <>
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-24 px-6 md:px-12 bg-surface text-navy border-t border-navy/10 relative overflow-hidden">
-        <LuxuryParticles colors={["bg-navy shadow-none", "bg-navy shadow-none", "bg-sceptre shadow-none"]} />
+      <section id="contact" className="py-24 px-6 md:px-12 bg-navy text-ivory border-t border-gold/30 relative overflow-hidden">
+        <StarParticles />
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative z-10">
           
           <motion.div 
@@ -28,22 +29,22 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-widest text-muted">Location</span>
-                <span className="text-sm font-sans text-navy">{personalProfile.location}</span>
+                <span className="text-sm font-sans text-ivory">{personalProfile.location}</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-widest text-muted">WhatsApp</span>
-                <a href="https://wa.me/916281069504" target="_blank" rel="noreferrer" className="text-sm font-sans text-navy hover:text-sceptre transition-colors">+91 6281069504</a>
+                <a href="https://wa.me/916281069504" target="_blank" rel="noreferrer" className="text-sm font-sans text-ivory hover:text-sceptre transition-colors">+91 6281069504</a>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-widest text-muted">Email</span>
-                <a href={`mailto:${personalProfile.email}`} className="text-sm font-sans text-navy hover:text-sceptre transition-colors">{personalProfile.email}</a>
+                <a href={`mailto:${personalProfile.email}`} className="text-sm font-sans text-ivory hover:text-sceptre transition-colors">{personalProfile.email}</a>
               </div>
               
               <div className="flex items-center gap-6 mt-4">
-                <a href={personalProfile.github} target="_blank" rel="noreferrer" className="text-xs uppercase tracking-widest font-sans text-navy border-b border-navy hover:text-sceptre hover:border-sceptre transition-all pb-1">
+                <a href={personalProfile.github} target="_blank" rel="noreferrer" className="text-xs uppercase tracking-widest font-sans text-ivory border-b border-ivory hover:text-sceptre hover:border-sceptre transition-all pb-1">
                   GitHub
                 </a>
-                <a href={personalProfile.linkedin} target="_blank" rel="noreferrer" className="text-xs uppercase tracking-widest font-sans text-navy border-b border-navy hover:text-sceptre hover:border-sceptre transition-all pb-1">
+                <a href={personalProfile.linkedin} target="_blank" rel="noreferrer" className="text-xs uppercase tracking-widest font-sans text-ivory border-b border-ivory hover:text-sceptre hover:border-sceptre transition-all pb-1">
                   LinkedIn
                 </a>
               </div>
@@ -66,7 +67,7 @@ export default function Footer() {
                   id="name" 
                   name="name"
                   required
-                  className="bg-transparent border-b border-navy/20 focus:border-gold outline-none py-2 text-sm font-sans transition-colors rounded-none"
+                  className="bg-transparent border-b border-ivory/20 focus:border-gold outline-none py-2 text-sm font-sans text-ivory placeholder-ivory/40 transition-colors rounded-none"
                   placeholder="John Doe"
                 />
               </div>
@@ -77,7 +78,7 @@ export default function Footer() {
                   id="email" 
                   name="email"
                   required
-                  className="bg-transparent border-b border-navy/20 focus:border-gold outline-none py-2 text-sm font-sans transition-colors rounded-none"
+                  className="bg-transparent border-b border-ivory/20 focus:border-gold outline-none py-2 text-sm font-sans text-ivory placeholder-ivory/40 transition-colors rounded-none"
                   placeholder="john@example.com"
                 />
               </div>
@@ -88,13 +89,13 @@ export default function Footer() {
                   name="message"
                   required
                   rows="4"
-                  className="bg-transparent border-b border-navy/20 focus:border-gold outline-none py-2 text-sm font-sans transition-colors resize-none rounded-none"
+                  className="bg-transparent border-b border-ivory/20 focus:border-gold outline-none py-2 text-sm font-sans transition-colors resize-none rounded-none"
                   placeholder="Hello Anjum..."
                 />
               </div>
               <button 
                 type="submit"
-                className="inline-flex items-center justify-center px-8 py-4 bg-navy text-ivory text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold hover:text-navy hover:shadow-glow-gold transition-colors w-full mt-4"
+                className="inline-flex items-center justify-center px-8 py-4 bg-ivory text-navy text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold hover:text-ivory hover:shadow-glow-gold transition-colors w-full mt-4"
               >
                 Send Message
               </button>

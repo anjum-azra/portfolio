@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { PROFILE_SRC, personalProfile } from "../data";
 import LuxuryParticles from "./LuxuryParticles";
+import StarParticles from "./StarParticles";
 
 export default function Hero() {
   const container = {
@@ -23,6 +24,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center overflow-hidden bg-gradient-to-br from-navy-mid to-navy-base">
       <LuxuryParticles colors={["bg-gold shadow-glow-gold"]} />
+      <StarParticles />
       
       <motion.div
         variants={container}
@@ -91,7 +93,7 @@ export default function Hero() {
             <img 
               src={PROFILE_SRC} 
               alt="Anjum Azra" 
-              className="w-56 h-56 md:w-72 md:h-72 lg:w-[450px] lg:h-[450px] rounded-full object-cover border-4 border-gold shadow-glow-gold"
+              className="w-56 h-56 md:w-72 md:h-72 lg:w-[450px] lg:h-[450px] rounded-full object-cover border-4 border-gold shadow-glow-gold hover:scale-[1.03] hover:-translate-y-2 hover:border-ivory hover:shadow-glow-cerulean transition-all duration-700 cursor-pointer"
             />
           </motion.div>
         </div>

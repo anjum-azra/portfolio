@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { experiences, education, journey } from "../data";
 
 import LuxuryParticles from "./LuxuryParticles";
+import { getTechIcon } from "../utils/techLogos";
+import SpotlightCard from "./SpotlightCard";
 
 export default function Experience() {
   return (
@@ -89,30 +91,34 @@ export default function Experience() {
               key={`${edu.institute}-${idx}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-50px" }} whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-transparent hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
             >
-              <div className="md:col-span-4 flex flex-col">
-                <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-sceptre transition-colors">
-                  {edu.duration}
-                </span>
-                <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-sceptre transition-colors">
-                  {edu.institute}
-                </h3>
-              </div>
-              
-              <div className="md:col-span-8 flex flex-col justify-center">
-                <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-gold/30 transition-colors" />
-                <h4 className="text-2xl font-serif text-navy mb-4 group-hover:text-sceptre transition-colors">
-                  {edu.degree}
-                </h4>
-                {edu.detail && (
-                  <p className="text-sm font-sans text-muted leading-relaxed">
-                    &mdash; {edu.detail}
-                  </p>
-                )}
-              </div>
+              <SpotlightCard 
+                spotlightColor="rgba(212,175,55,0.08)"
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-gold/20 md:border-transparent bg-surface/30 md:bg-transparent shadow-glow-gold/10 md:shadow-none hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
+              >
+                <div className="md:col-span-4 flex flex-col">
+                  <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-sceptre transition-colors">
+                    {edu.duration}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-sceptre transition-colors">
+                    {edu.institute}
+                  </h3>
+                </div>
+                
+                <div className="md:col-span-8 flex flex-col justify-center">
+                  <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-gold/30 transition-colors" />
+                  <h4 className="text-2xl font-serif text-navy mb-4 group-hover:text-sceptre transition-colors">
+                    {edu.degree}
+                  </h4>
+                  {edu.detail && (
+                    <p className="text-sm font-sans text-muted leading-relaxed">
+                      &mdash; {edu.detail}
+                    </p>
+                  )}
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
@@ -138,43 +144,48 @@ export default function Experience() {
               key={`${exp.company}-${idx}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-50px" }} whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-transparent hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
             >
-              <div className="md:col-span-4 flex flex-col">
-                <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-sceptre transition-colors">
-                  {exp.period}
-                </span>
-                <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-sceptre transition-colors">
-                  {exp.company}
-                </h3>
-                <span className="text-sm font-sans italic text-navy mb-6 md:mb-0">
-                  {exp.title} &mdash; {exp.location}
-                </span>
-              </div>
-              
-              <div className="md:col-span-8 flex flex-col">
-                <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-gold/30 transition-colors" />
-                <ul className="flex flex-col gap-4 mb-8">
-                  {exp.bullets.map((bullet, i) => (
-                    <li key={i} className="text-sm font-sans text-muted leading-relaxed">
-                      &mdash; {bullet}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-3">
-                  {exp.tech.map((t, i) => (
-                    <span 
-                      key={t} 
-                      className="text-[9px] md:text-[10px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-3 py-1.5 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float inline-block"
-                      style={{ animationDelay: `${(idx * 0.2) + (i * 0.1)}s` }}
-                    >
-                      {t}
-                    </span>
-                  ))}
+              <SpotlightCard
+                spotlightColor="rgba(212,175,55,0.08)"
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 group p-6 -m-6 border border-gold/20 md:border-transparent bg-surface/30 md:bg-transparent shadow-glow-gold/10 md:shadow-none hover:border-gold/30 hover:shadow-glow-gold hover:bg-surface hover:-translate-y-2 transition-all duration-500 rounded-lg"
+              >
+                <div className="md:col-span-4 flex flex-col">
+                  <span className="text-xs tracking-[0.2em] uppercase font-sans text-muted mb-4 group-hover:text-sceptre transition-colors">
+                    {exp.period}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-serif text-navy mb-2 group-hover:text-sceptre transition-colors">
+                    {exp.company}
+                  </h3>
+                  <span className="text-sm font-sans italic text-navy mb-6 md:mb-0">
+                    {exp.title} &mdash; {exp.location}
+                  </span>
                 </div>
-              </div>
+                
+                <div className="md:col-span-8 flex flex-col">
+                  <div className="h-[1px] bg-navy/20 w-full mb-8 hidden md:block group-hover:bg-gold/30 transition-colors" />
+                  <ul className="flex flex-col gap-4 mb-8">
+                    {exp.bullets.map((bullet, i) => (
+                      <li key={i} className="text-sm font-sans text-muted leading-relaxed">
+                        &mdash; {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-3">
+                    {exp.tech.map((t, i) => (
+                      <span 
+                        key={t} 
+                        className="inline-flex items-center gap-1.5 text-[9px] md:text-[10px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-3 py-1.5 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float"
+                        style={{ animationDelay: `${(idx * 0.2) + (i * 0.1)}s` }}
+                      >
+                        {getTechIcon(t)}
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

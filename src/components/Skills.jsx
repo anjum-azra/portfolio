@@ -67,6 +67,8 @@ const techStack = [
 
 import LuxuryParticles from "./LuxuryParticles";
 
+import { getTechIcon } from "../utils/techLogos";
+
 export default function Skills() {
   return (
     <section id="skills" className="py-24 md:py-32 px-6 md:px-12 bg-surface relative overflow-hidden">
@@ -141,9 +143,10 @@ export default function Skills() {
                   {category.items.map((tech, i) => (
                     <span 
                       key={tech} 
-                      className="text-[10px] md:text-[11px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float inline-block"
+                      className="inline-flex items-center gap-2 text-[10px] md:text-[11px] font-mono text-cerulean bg-cerulean/10 border border-cerulean/30 px-4 py-2 rounded-full uppercase tracking-wider hover:bg-cerulean hover:text-ivory hover:border-cerulean hover:shadow-glow-cerulean transition-colors duration-300 cursor-default animate-float inline-flex"
                       style={{ animationDelay: `${(idx * 0.2) + (i * 0.1)}s` }}
                     >
+                      {getTechIcon(tech)}
                       {tech}
                     </span>
                   ))}

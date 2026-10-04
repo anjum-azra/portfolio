@@ -13,7 +13,7 @@ export default function LuxuryParticles({
 
   useEffect(() => {
     // Generate 100 random particles
-    const newParticles = Array.from({ length: 100 }).map((_, i) => ({
+    const newParticles = Array.from({ length: 25 }).map((_, i) => ({
       id: i,
       size: Math.random() * 3 + 1, // 1px to 4px
       x: Math.random() * 100, // 0 to 100vw
@@ -31,7 +31,7 @@ export default function LuxuryParticles({
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className={`absolute rounded-full ${p.colorClass}`}
+          className={`absolute rounded-full will-change-transform ${p.colorClass}`}
           style={{
             width: p.size,
             height: p.size,
